@@ -7,7 +7,7 @@ import Header from "./components/Header";
 import Nav from "./components/Nav";
 import SignIn from "./components/SignIn";
 import ArticleList from "./components/ArticleList";
-import UserList from "./components/UserList";
+//import UserList from "./components/UserList";
 import Home from "./components/Home";
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />}></Route>
                 <Route path="/articles" element={<ArticleList />}></Route>
-                <Route path="/users" element={<UserList />}></Route>
+                {/* <Route path="/users" element={<UserList />}></Route> */}
                 {/* <Route path="/topics" element={<TopicList />}></Route> */}
               </Routes>
             </>

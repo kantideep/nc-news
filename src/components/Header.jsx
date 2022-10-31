@@ -1,5 +1,9 @@
 const Header = () => {
-    return <h1>NC News by Kanti</h1>
+    return (
+    <header className="App-header">
+        NC News by Kanti
+    </header>
+    )
 }
 
 export default Header;

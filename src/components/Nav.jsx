@@ -6,7 +6,7 @@ const Nav = () => {
   const { user } = useContext(UserContext);
 
   return (
-    <nav> 
+    <nav className="Nav"> 
       <Link to="/articles">Articles</Link>
       <br />
       <Link to="/topics">Topics</Link>
