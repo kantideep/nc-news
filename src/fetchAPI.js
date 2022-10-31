@@ -15,3 +15,9 @@ export const fetchArticles = (sortBy) => {
         });
     }
 };
+
+export const fetchUsers = () => {
+    return myAPI.get("/users").then((res) => {
+        return res.data.users;
+    });
+};
