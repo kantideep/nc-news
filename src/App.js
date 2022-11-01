@@ -8,6 +8,7 @@ import Nav from "./components/Nav";
 import SignIn from "./components/SignIn";
 import ArticleList from "./components/ArticleList";
 //import UserList from "./components/UserList";
+import TopicList from "./components/TopicList";
 import Home from "./components/Home";
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
                 <Route path="/" element={<Home />}></Route>
                 <Route path="/articles" element={<ArticleList />}></Route>
                 {/* <Route path="/users" element={<UserList />}></Route> */}
-                {/* <Route path="/topics" element={<TopicList />}></Route> */}
+                <Route path="/topics" element={<TopicList />}></Route>
               </Routes>
             </>
           )}

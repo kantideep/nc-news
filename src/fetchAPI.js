@@ -21,3 +21,15 @@ export const fetchUsers = () => {
         return res.data.users;
     });
 };
+
+export const fetchTopics = () => {
+    return myAPI.get("/topics").then((res) => {
+        return res.data.topics;
+    });
+};
+
+export const fetchArticlesByTopic = (slug) => {
+    return myAPI.get(`?topic=${slug}`).then((res) => {
+        return res.data.articles;
+    })
+};
