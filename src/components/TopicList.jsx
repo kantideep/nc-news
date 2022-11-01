@@ -21,7 +21,7 @@ const TopicList = () => {
     if (isLoading) return (<h2>Loading topics...</h2>);
 
      return (
-    <main className="Topics">
+    <main>
       <h1>Topics</h1>
           <section>
             <ul>
