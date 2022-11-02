@@ -27,3 +27,9 @@ export const fetchArticlesByTopic = (slug) => {
         return res.data.articles;
     })
 };
+
+export const fetchArticleById = (article_id) => {
+    return myAPI.get(`/articles/${article_id}`).then((res) => {
+            return res.data.article;
+        })
+};
