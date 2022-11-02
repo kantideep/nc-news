@@ -33,3 +33,10 @@ export const fetchArticleById = (article_id) => {
             return res.data.article;
         })
 };
+
+export const updateArticleVotes = (article_id, vote) => {
+    const body = { inc_votes: vote };
+    return myAPI.patch(`/articles/${article_id}`, body).then((res) => {
+            return res.data.article;
+        })
+};
