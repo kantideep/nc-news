@@ -12,6 +12,10 @@ const SingleArticle = () => {
   const { title, topic, body, author, created_at } = article;
   const [votes, setVotes] = useState(0);
 
+  const handleClick = (vote) => {
+    setVotes(votes + 1);
+    updateArticleVotes(article_id, vote);
+  }
   
   useEffect(() => {
     setIsLoading(true);
@@ -29,9 +33,9 @@ const SingleArticle = () => {
    
   if (isLoading) return (<h2>Loading article...</h2>);
 
-
-
-    return (
+  if (error) return (<ErrorPage />);
+  
+  return (
       <main>
         <section>
           <h2>{title}</h2>
@@ -39,6 +43,10 @@ const SingleArticle = () => {
           <h3>Topic: {topic}</h3>
           <p>{body}</p>
           <h4>Date: {created_at}</h4>
+          <div>
+            <button onClick={() => handleClick(1)}>👍</button>
+            <h5>Votes: {votes}</h5>
+            < /div>
         </section>
       </main>
     );
