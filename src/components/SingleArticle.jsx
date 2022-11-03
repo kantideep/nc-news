@@ -13,6 +13,7 @@ const SingleArticle = () => {
   const [votes, setVotes] = useState(0);
 
   const handleClick = (vote) => {
+        setVotes(votes + 1);
         updateArticleVotes(article_id, vote)
         .then(() => {
             setArticle((article) => {
@@ -26,7 +27,6 @@ const SingleArticle = () => {
     setIsLoading(true);
     fetchArticleById(article_id)
       .then((article) => {
-        setVotes(article.votes);
         setArticle(article);
         setIsLoading(false);
     })
