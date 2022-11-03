@@ -11,7 +11,6 @@ const TopicList = () => {
     useEffect(() => {
         setIsLoading(true);
         fetchTopics().then((topicListData) => {
-            console.log(topicListData)
             setTopicList(topicListData);
             setIsLoading(false);
         })

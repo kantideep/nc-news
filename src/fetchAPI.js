@@ -5,9 +5,9 @@ const myAPI = axios.create({
 });
 
 export const fetchArticles = (topic) => {
-    return myAPI.get("/articles", {params: {topic}}).then((res) => {
-             return res.data.articles;
-         });
+    return myAPI.get("/articles", { params: { topic } }).then((res) => {
+        return res.data.articles;
+    });
 }
 
 export const fetchUsers = () => {
@@ -30,6 +30,13 @@ export const fetchArticlesByTopic = (slug) => {
 
 export const fetchArticleById = (article_id) => {
     return myAPI.get(`/articles/${article_id}`).then((res) => {
-            return res.data.article;
-        })
+        return res.data.article;
+    })
+};
+
+export const updateArticleVotes = (article_id, vote) => {
+    const body = { inc_votes: vote };
+    return myAPI.patch(`/articles/${article_id}`, body).then((res) => {
+        return res.data.article;
+    })
 };
