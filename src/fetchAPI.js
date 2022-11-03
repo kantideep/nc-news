@@ -4,8 +4,10 @@ const myAPI = axios.create({
     baseURL: "https://nc-news-app-kanti.herokuapp.com/api/",
 });
 
-export const fetchArticles = (topic) => {
-    return myAPI.get("/articles", { params: { topic } }).then((res) => {
+//api/articles?sort_by=comment_count&order=asc"
+
+export const fetchArticles = (topic, sort_by = 'created_at', order='desc') => {
+    return myAPI.get("/articles", { params: { topic, sort_by, order} }).then((res) => {
         return res.data.articles;
     });
 }
