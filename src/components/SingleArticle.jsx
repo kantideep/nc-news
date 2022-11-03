@@ -46,7 +46,7 @@ const SingleArticle = () => {
           <div>
             <button onClick={() => handleClick(1)}>👍</button>
             <h5>Votes: {votes}</h5>
-            < /div>
+            </div>
         </section>
       </main>
     );
