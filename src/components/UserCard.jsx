@@ -7,7 +7,7 @@ const UserCard = ({ user }) => {
     return (
 
         <article>
-            <Link to={`/users/${username}`}><h3>username: {username}</h3></Link>
+            <Link to={`/users/${username}`}><h3>{username}</h3></Link>
             <div>
                 <img src={avatar_url} alt={username}></img>
                 <p> name: {name}</p>
