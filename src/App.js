@@ -10,8 +10,8 @@ import ArticleList from "./components/ArticleList";
 import TopicList from "./components/TopicList";
 import SingleTopic from "./components/SingleTopic";
 import SingleArticle from "./components/SingleArticle";
-
 import Home from "./components/Home";
+import UserList from "./components/UserList";
 
 function App() {
 
@@ -33,6 +33,8 @@ function App() {
                 <Route path="/topics" element={<TopicList />}></Route>
                 <Route path="/topics/:topic" element={<SingleTopic />}></Route>
                 <Route path="/articles/:article_id" element={<SingleArticle />}></Route>
+                <Route path="/users" element={<UserList />}></Route>
+
               </Routes>
             </>
           )}
