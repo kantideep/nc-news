@@ -13,11 +13,6 @@ const ArticleCard = ({ article }) => {
                 <p> date: {created_at}</p>
                 <p> votes: {votes}</p>
                 <p> comment_count: {comment_count}</p>
-
-
-
-
-
             </div>
         </div>
     )

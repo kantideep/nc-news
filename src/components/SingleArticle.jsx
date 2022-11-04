@@ -2,18 +2,18 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchArticleById, updateArticleVotes } from "../fetchAPI";
 import ErrorPage from "./ErrorPage";
-
+import CommentList from "./CommentList";
 
 const SingleArticle = () => {
   const { article_id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [article, setArticle] = useState([]);
-  const { title, topic, body, author, created_at } = article;
-  const [votes, setVotes] = useState(0);
+  const { title, votes, topic, body, author, created_at } = article;
+  const [newVotes, setNewVotes] = useState(0);
 
   const handleClick = (vote) => {
-    setVotes(votes + 1);
+    setNewVotes(newVotes + 1);
     updateArticleVotes(article_id, vote);
   }
   
@@ -45,9 +45,11 @@ const SingleArticle = () => {
           <h4>Date: {created_at}</h4>
           <div>
             <button onClick={() => handleClick(1)}>👍</button>
-            <h5>Votes: {votes}</h5>
-            </div>
-        </section>
+            <h5>Votes: {votes + newVotes} </h5>
+        </div>
+        <CommentList />
+    
+      </section>
       </main>
     );
 };
