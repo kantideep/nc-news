@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
-import ArticleCard from "./ArticleCard";
 import { fetchArticles } from "../fetchAPI";
+import ArticleCard from "./ArticleCard";
+import ErrorPage from "./ErrorPage";
 
 const ArticleList = ({ topic }) => {
   const [articleList, setArticleList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [sortBy, setSortBy] = useState('created_at');
   const [orderBy, setOrderBy] = useState('desc');
+  const [err, setErr] = useState(null);
+
 
   const handleChangeSort = (event) => {
     setSortBy(event.target.value);
@@ -21,8 +24,17 @@ const ArticleList = ({ topic }) => {
     fetchArticles(topic, sortBy, orderBy).then((ArticleListData) => {
       setArticleList(ArticleListData);
       setIsLoading(false);
-    });
+    })
+    .catch((err) => {
+      if (err.response.data.status === 404) {
+        setErr("Error 404: Path not found...")
+      } else {
+        setErr("Oh oh. Something has gone wrong...");
+      }
+      });
   }, [topic, sortBy, orderBy]);
+
+  if (err) return (<ErrorPage />);
 
   return (
     <section>
