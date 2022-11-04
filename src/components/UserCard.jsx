@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 
 const UserCard = ({ user }) => {
 
@@ -9,7 +8,7 @@ const UserCard = ({ user }) => {
         <article>
             <div>
                 <img src={avatar_url} alt={username}></img>
-                <Link to={`/users/${username}`}><h3>{username}</h3></Link>
+                <h3>{username}</h3>
             </div>
         </article>
     )

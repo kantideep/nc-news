@@ -6,8 +6,8 @@ const myAPI = axios.create({
 
 //api/articles?sort_by=comment_count&order=asc"
 
-export const fetchArticles = (topic, sort_by = 'created_at', order='desc') => {
-    return myAPI.get("/articles", { params: { topic, sort_by, order} }).then((res) => {
+export const fetchArticles = (topic, sort_by = 'created_at', order = 'desc') => {
+    return myAPI.get("/articles", { params: { topic, sort_by, order } }).then((res) => {
         return res.data.articles;
     });
 }
@@ -44,7 +44,7 @@ export const updateArticleVotes = (article_id, vote) => {
 };
 
 export const fetchCommentsByArticle = (article_id) => {
-    return myAPI.get(`/${article_id}/comments`).then((res) => {
-            return res.data.comments;
-        })
+    return myAPI.get(`/articles/${article_id}/comments`).then((res) => {
+        return res.data.comments;
+    })
 };

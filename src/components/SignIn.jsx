@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../context/UserContext";
 import { fetchUsers } from "../fetchAPI";
 import UserCard from './UserCard';
+import { Link } from 'react-router-dom'
 
 const SignIn = () => {
   const [signInList, setSignInList] = useState([]);
@@ -27,7 +28,7 @@ const SignIn = () => {
           <h2>Loading Users</h2>
         ) : (
           signInList.map((user) => {
-            return <li key={user.username} onClick={() => { setUser(user.username) }}>{<UserCard key={user.username} user={user} />}</li>;
+            return <Link key={user.username} to={`/articles/`}><li onClick={() => { setUser(user.username) }}>{<UserCard key={user.username} user={user} />}</li></Link>;
           })
         )}
       </ul>

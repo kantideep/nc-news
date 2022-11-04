@@ -35,6 +35,10 @@
   z-index: 1;
 }
 
+.comment {
+  background-color: yellow;
+}
+
 .App-link {
   color: #61dafb;
 }
