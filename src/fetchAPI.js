@@ -42,3 +42,9 @@ export const updateArticleVotes = (article_id, vote) => {
         return res.data.article;
     })
 };
+
+export const fetchCommentsByArticle = (article_id) => {
+    return myAPI.get(`/${article_id}/comments`).then((res) => {
+            return res.data.comments;
+        })
+};
