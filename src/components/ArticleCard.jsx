@@ -12,7 +12,7 @@ const ArticleCard = ({ article }) => {
                 <p> author: {author}</p>
                 <p> date: {created_at}</p>
                 <p> votes: {votes}</p>
-                <p> comment_count: {comment_count}</p>
+                <p> comment count: {comment_count}</p>
             </div>
         </div>
     )

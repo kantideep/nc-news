@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchArticleById, updateArticleVotes } from "../fetchAPI";
-import ErrorPage from "./ErrorPage";
 import CommentList from "./CommentList";
 
 const SingleArticle = () => {
   const { article_id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
   const [article, setArticle] = useState([]);
   const { title, votes, topic, body, author, created_at } = article;
   const [newVotes, setNewVotes] = useState(0);
@@ -26,14 +24,11 @@ const SingleArticle = () => {
     })
       .catch((err) => {
         setIsLoading(false);
-        setError(err);
       });
   }, [article_id]);
 
-   
+  
   if (isLoading) return (<h2>Loading article...</h2>);
-
-  if (error) return (<ErrorPage />);
   
   return (
       <main>

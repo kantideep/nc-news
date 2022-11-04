@@ -11,10 +11,12 @@ const CommentList = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetchCommentsByArticle(article_id).then((commentListData) => {
+        fetchCommentsByArticle(article_id)
+            .then((commentListData) => {
             setCommentList(commentListData);
-            setIsLoading(false);
-        })
+                setIsLoading(false);
+            })
+
     }, [article_id])
 
     return (
